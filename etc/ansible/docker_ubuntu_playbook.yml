@@ -37,7 +37,7 @@
   - name: add docker repo gpg key
     apt_key: 
       id: "{{ docker_key_id }}"
-      url: "{{ docker_url }}"/ubuntu/gpg      
+      url: "{{ docker_url }}/ubuntu/gpg"      
 
   - name: add docker repository for ubuntu distribution
     apt_repository: 
