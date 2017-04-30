@@ -1,8 +1,8 @@
 ---
 - hosts: dockerubuntu
   become: yes
-    vars_files:
-    - vars/group_vars/docker.yaml
+  vars_files:
+    - vars/group_vars/docker.yml
       
   tasks:
   - name: run "apt-get update"
@@ -36,7 +36,7 @@
    
   - name: add docker repo gpg key
     apt_key: 
-      id: 0EBFCD88
+      id: "{{ docker_key_id }}"
       url: https://download.docker.com/linux/ubuntu/gpg      
 
   - name: add docker repository for ubuntu distribution

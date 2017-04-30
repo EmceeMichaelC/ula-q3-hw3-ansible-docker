@@ -1,4 +1,4 @@
 - hosts: dockercentos
   become: yes
   vars_files:
-    - vars/group_vars/docker.yaml
+    - vars/group_vars/docker.yml
