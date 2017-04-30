@@ -1,0 +1,12 @@
+
+#gpg key for docker repo
+docker_key_id: 0EBFCD88
+
+#url for docker repo
+docker_url: https://download.docker.com/linux/
+
+#ubuntu repo
+docker_repo_ubuntu: deb [arch=amd64] {{ docker_url }}/ubuntu/ {{ ansible_distribution_release }} stable
+
+#docker version to install
+docker-version: docker-ce
