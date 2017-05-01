@@ -13,5 +13,5 @@
 * etc/ansible/
   * docker_centos_playbook.yml - ansible playbook for Docker installation on CentOS
   * docker_ubuntu_playbook.yml - ansible playbook for Docker installation on Ubuntu
-* etc/ansible/vars/group_vars
+* etc/ansible/vars/group_vars/
   * docker.yml - variable file for common docker variables.
