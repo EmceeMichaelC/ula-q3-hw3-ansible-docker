@@ -2,8 +2,11 @@
 #gpg key for docker repo
 docker_key_id: 0EBFCD88
 
-#url for docker repo
+#base url for docker repos
 docker_url: https://download.docker.com/linux
+
+#centos repo
+docker_repo_centos: "{{ docker_url }}/centos/docker-ce.repo"
 
 #ubuntu repo
 docker_repo_ubuntu: deb [arch=amd64] {{ docker_url }}/ubuntu/ {{ ansible_distribution_release }} stable

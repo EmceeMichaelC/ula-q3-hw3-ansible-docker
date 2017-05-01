@@ -1,4 +1,50 @@
+---
+# Playbook based on Docker installation instructions for CentOS:  https://docs.docker.com/engine/installation/linux/centos/
+
 - hosts: dockercentos
   become: yes
   vars_files:
     - vars/group_vars/docker.yml
+       
+  tasks:
+  - name: run "yum makecache fast"
+    command: yum makecache fast
+
+  - name: ensure older versions of docker and supporting packages are uninstalled -- removing "docker"
+    yum:
+       name: docker
+       state: absent
+
+  - name: ensure older versions of docker and supporting packages are uninstalled -- removing "docker-common"
+    yum:
+       name: docker-common
+       state: absent
+
+  - name: ensure older versions of docker and supporting packages  are uninstalled -- removing "container-selinux"
+    yum:
+       name: container-selinux
+       state: absent
+
+  - name: ensure older versions of docker and supporting packages are uninstalled -- removing "docker-selinux"
+    yum:
+       name: docker-selinux
+       state: absent
+
+  - name: ensure older versions of docker and supporting packages are uninstalled -- removing "docker-engine"
+    yum:
+       name: docker-engine
+       state: absent
+
+  - name: install yum utils
+    yum:
+       name: yum-utils
+       state: present
+
+  - name: add docker repository for centos distribution
+    command: yum-config-manager --add-repo "{{ docker_repo_centos }}"
+
+  - name: install docker
+    yum:
+       name: "{{ docker_version }}"
+       state: present
+

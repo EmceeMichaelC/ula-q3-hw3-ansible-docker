@@ -1,4 +1,6 @@
 ---
+# Playbook based on Docker installation instructions for Ubuntu:  https://docs.docker.com/engine/installation/linux/ubuntu/
+
 - hosts: dockerubuntu
   become: yes
   vars_files:
