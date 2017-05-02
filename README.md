@@ -6,6 +6,7 @@
 
 
 *Ansible playbooks for Docker installation on Ubuntu and CentOS*
+
 *Minimum version: ansible 2.0*
 
 *Contents*
