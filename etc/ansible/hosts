@@ -1,0 +1,7 @@
+#Sample Ansible hosts file
+
+[dockerubuntu]
+127.0.0.1
+
+[dockercentos]
+127.0.0.1
