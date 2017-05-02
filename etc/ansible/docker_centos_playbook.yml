@@ -43,6 +43,13 @@
   - name: add docker repository for centos distribution
     command: yum-config-manager --add-repo "{{ docker_repo_centos }}"
 
+ # In Ansible 2.1 or above, use yum_repository module instead of installing yum-utils and using yum-config-manager to add repository.
+ #- name: add docker repository for centos using yum_repository.
+ #  yum-repository:
+ #    name: docker-ce.repo"
+ #    description: docker repo for centos
+ #    baseurl: "{{ docker_url }}/centos/"
+
   - name: install docker
     yum:
        name: "{{ docker_version }}"
